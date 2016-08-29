@@ -1,0 +1,19 @@
+{
+  "name": "node-web-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js",
+    "proxy": "node proxy/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-proxy": "^1.14.0"
+  },
+  "devDependencies": {
+    "express": "^4.14.0"
+  }
+}
