@@ -8,19 +8,19 @@ var app = express();
 
 var proxy = httpProxy.createProxyServer({});
 
-app.use(express.static('public'));
+app.use(express.static('./'));
 
-app.get('/', function(req, res) {
-    //res.send('Hello World')
+// app.get('/', function(req, res) {
+//     //res.send('Hello World')
 
-    fs.readFile("./index.html", function(error, content) {
-        res.writeHead(200, { 'Content-Type': "text/html" });
-        res.write(content, 'utf-8');
-        res.end();
-    })
-});
+//     fs.readFile("./index.html", function(error, content) {
+//         res.writeHead(200, { 'Content-Type': "text/html" });
+//         res.write(content, 'utf-8');
+//         res.end();
+//     })
+// });
 
-app.get('/api', function(req, res) {
+app.get(/api/, function(req, res) {
     proxy.web(req, res, { target: 'http://localhost:9000' });
 });
 
